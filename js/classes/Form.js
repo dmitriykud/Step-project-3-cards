@@ -14,8 +14,8 @@ export default class Form {
         const inputs = this.form.querySelectorAll('input');
         const body = {};
 
-        inputs.forEach(input => {
 
+        inputs.forEach(input => {
             body[input.type] = input.value;
         })
 

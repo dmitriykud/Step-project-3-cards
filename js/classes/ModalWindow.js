@@ -57,7 +57,6 @@ export default class ModalWindow {
 
             if (!withinBoundaries) {
                 this.close()
-                console.log('hellow');
             }
         })
 
