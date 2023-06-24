@@ -27,7 +27,12 @@ margin-top: 40px;
  margin: 0 auto;
  /* display: none; */
 }
+.filter-form{
+    width: 100%;
+    display: none;
+    padding : 20px 20px ;
 
+}
 .cards-wrapper {
     display: flex;
     flex-wrap: wrap;

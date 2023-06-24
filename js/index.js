@@ -65,7 +65,7 @@ btnCreateVisit.addEventListener('click', () => {
 
         const card = `
         <div class="card w-25" id = ${data.id}>
-            <div class="card-body">
+            <div class="card-body bg-warning">
             <h5 class="card-title">Лікар:${data.Лікар}</h5>
             <p class="card-text">Мета візиту: ${data.Мета_візиту}</p>
             <p class="card-text">Короткий опис візиту: ${data.Короткий_опис_візиту}</p>
@@ -73,7 +73,7 @@ btnCreateVisit.addEventListener('click', () => {
             <p class="card-text">П.І.Б.: ${data.П_І_Б}</p>
 
             ${additionalToCard}
-            <a href="#" class="btn btn-primary">Видалити</a>
+            <a href="#" class="btn btn-primary btn-delete">Видалити</a>
             </div>
         </div>
                 `;

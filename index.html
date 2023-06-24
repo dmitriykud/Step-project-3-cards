@@ -33,8 +33,38 @@
     </header>
 
 
-    <p class="fw-bolder text-center fs-2 title">Увійдіть в свій кабінет</p>
+    <p class="fw-bolder text-center fs-2 first-message">Увійдіть в свій кабінет</p>
+    
+    
+    <form class="row gx-3 gy-2 align-items-center filter-form">
+        <div class="col-sm-3 ">
+            
+            <input type="text" class="form-control"  placeholder="Пошук за лікарем">
+        </div>
+        <div class="col-sm-3">
+          
+            <select class="form-select" >
+                <option selected>Пошук за статусом</option>
+                <option value="open">Візит заплонавиний</option>
+                <option value="done">Візит відбувся</option>
 
+            </select>
+        </div>
+        <div class="col-sm-3">
+            
+            <select class="form-select" >
+                <option selected>Терміновість візиту</option>
+                <option value="high">Невідкладна</option>
+                <option value="normal">Пріоритетна</option>
+                <option value="low"> Звичайна</option>
+            </select>
+        </div>
+
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Знайти</button>
+        </div>
+    </form>
+    
     <div class="cards-wrapper">
 
     </div>
