@@ -71,9 +71,9 @@ export default class Vizit extends Form {
 
             <select class="form-select select-need" id="Терміновість" aria-label="Default select example">
                 <option selected>Оберіть терміновість</option>
-                <option  value="Звичайна">Звичайна</option>
-                <option  value="Пріоритетна">Пріоритетна</option>
-                <option  value="Невідкладна">Невідкладна</option>
+                <option  value="high">Звичайна</option>
+                <option  value="normal">Пріоритетна</option>
+                <option  value="high">Невідкладна</option>
             </select>
 
             <div class="mb-3">
