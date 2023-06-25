@@ -1,38 +1,42 @@
-
-.form{
+.form {
     padding: 40px;
-} 
-body{
+}
+
+body {
     background-color: aqua;
 }
+
 header {
-       width: 100%;
-    height: 90px; 
+    width: 100%;
+    height: 90px;
     background-color: lightpink;
 }
-.nav{
+
+.nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.сreate-visit{
+.сreate-visit {
     display: none;
 }
-.title{
-margin-top: 40px;
+
+.title {
+    margin-top: 40px;
 }
-.login_form{
+
+.login_form {
     width: 40%;
- margin: 0 auto;
- /* display: none; */
+    margin: 0 auto;
 }
-.filter-form{
+
+.filter-form {
     width: 100%;
     display: none;
-    padding : 20px 20px ;
-
+    padding: 20px 20px;
 }
+
 .cards-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -41,7 +45,4 @@ margin-top: 40px;
     column-gap: 20px;
     margin: 50px auto;
     padding: 40px 40px;
-
-
 }
-

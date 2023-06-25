@@ -3,7 +3,7 @@ import Form from "./Form.js";
 export default class LoginForm extends Form {
     constructor(title) {
         super(title);
-    }
+    };
 
     createElement() {
         super.createElement()
@@ -20,4 +20,4 @@ export default class LoginForm extends Form {
         `
         this.form.insertAdjacentHTML('beforeend', inputs);
     }
-}
+};

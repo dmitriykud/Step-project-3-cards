@@ -12,7 +12,7 @@ export default class ModalWindow {
         this.modalFooter = document.createElement('div');
         this.btnConfirm = document.createElement('button');
         this.btnClose = document.createElement('button')
-    }
+    };
 
     createElement() {
         this.modalConteiner.classList.add('modal');
@@ -27,29 +27,21 @@ export default class ModalWindow {
         this.btnConfirm.classList.add('btn-primary');
         this.btnConfirm.innerText = 'Confirm';
 
-
         const header = `<h5 class="modal-title">${this.title}</h5>`
 
         this.modalHeader.innerHTML = header;
         this.modalHeader.append(this.btnClose)
-
         this.modalFooter.append(this.btnConfirm)
-
         this.modalContent.append(this.modalHeader, this.modalBody, this.modalFooter)
-
         this.modalDialog.append(this.modalContent)
-
         this.modalConteiner.append(this.modalDialog)
-
         this.modalBody.append(this.elem);
-
-    }
+    };
 
     addListeners() {
 
         this.btnClose.addEventListener('click', () => {
             this.close()
-
         })
 
         this.modalConteiner.addEventListener('click', (e) => {
@@ -66,11 +58,11 @@ export default class ModalWindow {
                 this.close();
             });
         })
-    }
+    };
 
     close() {
         this.modalConteiner.remove();
-    }
+    };
 
     render() {
         this.createElement();
@@ -78,4 +70,4 @@ export default class ModalWindow {
         document.body.append(this.modalConteiner)
 
     }
-}
+};

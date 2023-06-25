@@ -52,16 +52,15 @@ export default class Visit extends Form {
         <option selected>Оберіть лікаря</option>
         <option value="Cardiologist">Кардіолог</option>
         <option value="Dentist">Стоматолог</option>
-        <option value=Therapist">Терапевт</option>
+        <option value="Therapist">Терапевт</option>
         `;
 
         this.select.innerHTML = options;
 
-
         const inputs = `
             <div class="mb-3">
                 <label for="purposeVisit" class="col-form-label">Мета візиту:</label>
-                <input type="text" class="form-control" id="purposeVisit">
+                <input type="text" class="form-control" id="purposeVisit" >
             </div>
 
             <div class="mb-3">
@@ -84,31 +83,28 @@ export default class Visit extends Form {
         this.form.append(this.select);
         this.form.insertAdjacentHTML('beforeend', inputs);
         this.form.append(this.additionalInputsContainer);
-    }
+    };
 
     addInputsForElement(elementType) {
         if (elementType === 'Cardiologist') {
             this.additionalInputsContainer.innerHTML = this.cardiologistHTML;
             return;
-        }
+        };
 
         if (elementType === 'Therapist') {
             this.additionalInputsContainer.innerHTML = this.therapistHTML;
             return;
-        }
+        };
 
         if (elementType === 'Dentist') {
             this.additionalInputsContainer.innerHTML = this.dentistHTML;
             return;
-        }
+        };
 
         this.additionalInputsContainer.innerHTML = '';
-    }
-
-
+    };
 
     getVizitValues() {
-
         const inputs = this.form.querySelectorAll("input");
         const textarea = this.form.querySelector("textarea");
         const selects = this.form.querySelectorAll("select");
@@ -124,13 +120,12 @@ export default class Visit extends Form {
             body[select.id] = select.value;
         });
         return body;
-    }
+    };
 
     getFormElement() {
         this.select.addEventListener('change', (event) => {
             this.addInputsForElement(event.target.value)
-
         })
         return super.getFormElement();
     }
-}
+};
