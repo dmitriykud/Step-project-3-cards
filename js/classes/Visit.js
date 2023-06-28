@@ -9,43 +9,43 @@ export default class Visit extends Form {
         this.cardiologistHTML = `
         <div class="mb-3">
             <label for="normalPressure" class="col-form-label">Звичайний тиск</label>
-             <input type="text" class="form-control" id="normalPressure">
+             <input type="text" class="form-control is-invalid" id="normalPressure">
         </div>
         
         <div class="mb-3">
             <label for="indexBodyMass" class="col-form-label">Індекс маси тіла</label>
-            <input type="text" class="form-control" id="indexBodyMass">
+            <input type="text" class="form-control is-invalid" id="indexBodyMass">
         </div>
         
         <div class="mb-3">
             <label for="transferredDiseases" class="col-form-label">Перенесені захворювання сердцево-судинної системи </label>
-            <input type="text" class="form-control" id="transferredDiseases">
+            <input type="text" class="form-control is-invalid" id="transferredDiseases">
         </div>
                     
         <div class="mb-3">
-            <label for="age" class="col-form-label">Вік</label>
-            <input type="text" class="form-control" id="age">
+            <label for="age" class="col-form-label ">Вік</label>
+            <input type="text" class="form-control is-invalid" id="age">
         </div>          
         `;
 
         this.therapistHTML = `
         <div class="mb-3">
             <label for="age" class="col-form-label">Вік</label>
-            <input type="text" class="form-control" id="age">
+            <input type="text" class="form-control is-invalid" id="age">
         </div>          
         `;
 
         this.dentistHTML = `
         <div class="mb-3">
             <label for="lastDateVisit" class="col-form-label">Дата останнього візиту</label>
-            <input type="text" class="form-control" id="lastDateVisit">
+            <input type="text" class="form-control is-invalid" id="lastDateVisit">
         </div> 
         `;
     }
 
     createElement() {
         super.createElement()
-        this.select.classList.add('form-select', 'select-doctor')
+        this.select.classList.add('form-select', 'select-doctor', 'is-invalid')
         this.select.setAttribute('id', 'doctor');
 
         const options = `
@@ -60,7 +60,8 @@ export default class Visit extends Form {
         const inputs = `
             <div class="mb-3">
                 <label for="purposeVisit" class="col-form-label">Мета візиту:</label>
-                <input type="text" class="form-control" id="purposeVisit" >
+                <input type="text" class="form-control is-invalid" id="purposeVisit">
+
             </div>
 
             <div class="mb-3">
@@ -68,7 +69,7 @@ export default class Visit extends Form {
                 <textarea class="form-control" id="visitDescription" rows="2"></textarea>
             </div>
 
-            <select class="form-select select-need" id="urgency" aria-label="Default select example">
+            <select class="form-select select-need is-invalid" id="urgency" aria-label="Default select example">
                 <option selected>Оберіть терміновість</option>
                 <option  value="low">Звичайна</option>
                 <option  value="normal">Пріоритетна</option>
@@ -77,8 +78,9 @@ export default class Visit extends Form {
 
             <div class="mb-3">
                 <label for="fullName" class="col-form-label">Ваше П.І.Б.:</label>
-                <input type="text" class="form-control" id="fullName">
+                <input type="text" class="form-control is-invalid" id="fullName">
             </div>
+            
         `
         this.form.append(this.select);
         this.form.insertAdjacentHTML('beforeend', inputs);
@@ -113,12 +115,20 @@ export default class Visit extends Form {
         body[textarea.id] = textarea.value;
 
         inputs.forEach((input) => {
-            body[input.id] = input.value;
+            body[input.id] = input.value
         });
 
         selects.forEach((select) => {
-            body[select.id] = select.value;
+            body[select.id] = select.value
         });
+
+        for (let key in body) {
+            if (key !== "visitDescription" && body[key] === "" || body[key] === "Оберіть лікаря" || body[key] === "Оберіть терміновість") {
+                alert('Заповніть поля виділені червоним!')
+                return;
+            }
+        }
+
         return body;
     };
 

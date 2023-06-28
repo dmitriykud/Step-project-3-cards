@@ -52,8 +52,8 @@ export default class ModalWindow {
             }
         })
 
-        this.btnConfirm.addEventListener('click', () => {
-
+        this.btnConfirm.addEventListener('click', (e) => {
+            e.preventDefault();
             this.confirmFunction(() => {
                 this.close();
             });
