@@ -60,12 +60,12 @@ export default class Visit extends Form {
         const inputs = `
             <div class="mb-3">
                 <label for="purposeVisit" class="col-form-label">Мета візиту:</label>
-                <input type="text" class="form-control" id="purposeVisit" >
+                <input type="text" class="form-control" id="purposeVisit" required>
             </div>
 
             <div class="mb-3">
                 <label for="visitDescription" class="form-label">Короткий опис візиту</label>
-                <textarea class="form-control" id="visitDescription" rows="2"></textarea>
+                <textarea class="form-control" id="visitDescription" rows="2" required></textarea>
             </div>
 
             <select class="form-select select-need" id="urgency" aria-label="Default select example">
@@ -77,7 +77,7 @@ export default class Visit extends Form {
 
             <div class="mb-3">
                 <label for="fullName" class="col-form-label">Ваше П.І.Б.:</label>
-                <input type="text" class="form-control" id="fullName">
+                <input type="text" class="form-control" id="fullName" required >
             </div>
         `
         this.form.append(this.select);
