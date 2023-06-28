@@ -79,6 +79,7 @@ export default class Card {
         })
 
         this.deleteButton.addEventListener("click", ev => {
+           
             axios.delete(`https://ajax.test-danit.com/api/v2/cards/${this.id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -91,8 +92,10 @@ export default class Card {
                 })
         })
     };
+    
     render(selector) {
         this.createElements();
         document.querySelector(selector).prepend(this.container);
     }
+
 };

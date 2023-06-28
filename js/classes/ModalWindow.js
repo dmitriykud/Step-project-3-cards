@@ -23,8 +23,8 @@ export default class ModalWindow {
         this.btnClose.classList.add('btn-close')
         this.modalBody.classList.add('modal-body');
         this.modalFooter.classList.add('modal-footer');
-        this.btnConfirm.classList.add('btn');
-        this.btnConfirm.classList.add('btn-primary');
+        this.btnConfirm.classList.add('btn','btn-primary');
+        this.btnConfirm.setAttribute('type','submit');
         this.btnConfirm.innerText = 'Confirm';
 
         const header = `<h5 class="modal-title">${this.title}</h5>`
