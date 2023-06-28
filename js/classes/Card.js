@@ -70,26 +70,25 @@ export default class Card {
 
         this.container.append(this.divShowMore, this.btnShowMore, this.deleteButton);
 
-
-
         this.btnShowMore.addEventListener("click", () => {
-
             this.divShowMore.classList.toggle('active');
-
         })
 
         this.deleteButton.addEventListener("click", ev => {
-           
-            axios.delete(`https://ajax.test-danit.com/api/v2/cards/${this.id}`, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
-                }
-            })
-                .then(({ status }) => {
-                    if (status === 200) {
-                        this.container.remove();
+            try {
+                axios.delete(`https://ajax.test-danit.com/api/v2/cards/${this.id}`, {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
                 })
+                    .then(({ status }) => {
+                        if (status === 200) {
+                            this.container.remove();
+                        }
+                    })
+            } catch (err) {
+                console.log(err);
+            }                       
         })
     };
     

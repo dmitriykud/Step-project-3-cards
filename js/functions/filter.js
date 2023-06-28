@@ -32,10 +32,9 @@ const filterCard = async ({ search, select_doctor, select_urgency }) => {
         }) => {
             new Card(id, age, visitDescription, doctor, purposeVisit, fullName, urgency, indexBodyMass, normalPressure, transferredDiseases, lastDateVisit).render('.cards-wrapper')
         })
-
     } catch (error) {
         console.log(error);
     }
-}
+};
 
 export default filterCard;

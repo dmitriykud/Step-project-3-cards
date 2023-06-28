@@ -68,6 +68,5 @@ export default class ModalWindow {
         this.createElement();
         this.addListeners();
         document.body.append(this.modalConteiner)
-
     }
 };

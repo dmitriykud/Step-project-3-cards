@@ -1,17 +1,20 @@
-const instance = axios.create( {
+const instance = axios.create({
     baseURL: "https://ajax.test-danit.com/api/v2/cards",
-})
+});
 
 instance.interceptors.request.use((config) => {
-    
-    if (localStorage.getItem('token')) {
-        config.headers = {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+    try {
+        if (localStorage.getItem('token')) {
+            config.headers = {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
         }
-    }
 
-    return config;
-  });
+        return config;
+    } catch (err) {
+        console.log(err);
+    }
+});
 
 
 export default instance;

@@ -80,9 +80,8 @@ export default class Visit extends Form {
                 <label for="fullName" class="col-form-label">Ваше П.І.Б.:</label>
 
                 <input type="text" class="form-control is-invalid" id="fullName">
-            </div>
-            
-        `
+            </div>       
+        `;
         this.form.append(this.select);
         this.form.insertAdjacentHTML('beforeend', inputs);
         this.form.append(this.additionalInputsContainer);
@@ -129,7 +128,6 @@ export default class Visit extends Form {
                 return;
             }
         }
-
         return body;
     };
 

@@ -11,9 +11,7 @@ const checkToken = () => {
 
         loginBtn.style.display = 'none';
         сreateVisit.style.display = 'block';
-        // firstMessage.style.display = 'none';
         filterForm.style.display = 'flex';
-        // Отримати з сервера і відмалювати всю інфу
 
         axios.get('https://ajax.test-danit.com/api/v2/cards', {
             headers: {
