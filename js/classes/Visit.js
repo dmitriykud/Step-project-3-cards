@@ -61,9 +61,9 @@ export default class Visit extends Form {
 
         const options = `
         <option selected>Оберіть лікаря</option>
-        <option value="Cardiologist">Кардіолог</option>
-        <option value="Dentist">Стоматолог</option>
-        <option value="Therapist">Терапевт</option>
+        <option value="Кардіолог">Кардіолог</option>
+        <option value="Стоматолог">Стоматолог</option>
+        <option value="Терапевт">Терапевт</option>
         `;
 
         this.select.innerHTML = options;
@@ -87,7 +87,7 @@ export default class Visit extends Form {
             </select>
 
             <div class="mb-3">
-                <label for="fullName" class="col-form-label">Ваше П.І.Б.:</label>
+                <label for="fullName" class="col-form-label">П.І.Б. паціента:</label>
 
                 <input type="text" class="form-control is-invalid" id="fullName">
             </div>       
@@ -98,17 +98,17 @@ export default class Visit extends Form {
     };
 
     addInputsForElement(elementType) {
-        if (elementType === 'Cardiologist') {
+        if (elementType === 'Кардіолог') {
             this.additionalInputsContainer.innerHTML = this.cardiologistHTML;
             return;
         };
 
-        if (elementType === 'Therapist') {
+        if (elementType === 'Терапевт') {
             this.additionalInputsContainer.innerHTML = this.therapistHTML;
             return;
         };
 
-        if (elementType === 'Dentist') {
+        if (elementType === 'Стоматолог') {
             this.additionalInputsContainer.innerHTML = this.dentistHTML;
             return;
         };

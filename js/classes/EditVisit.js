@@ -58,37 +58,37 @@ export default class EditVisit extends Form {
     createElement() {
         super.createElement()
 
-        if (this.doctor === 'Cardiologist') {
+        if (this.doctor === 'Кардіолог') {
             this.selectDoctorHTML = `
             <select class="form-select select-doctor is-invalid" id="doctor" aria-label="Default select example">
             <option >Оберіть лікаря</option>
-            <option selected value="Cardiologist">Кардіолог</option>
-            <option value="Dentist">Стоматолог</option>
-            <option value="Therapist">Терапевт</option>
+            <option selected value="Кардіолог">Кардіолог</option>
+            <option value="Стоматолог">Стоматолог</option>
+            <option value="Терапевт">Терапевт</option>
             </select>
             `;
             this.additionalForDoctor = this.cardiologistHTML;
         };
 
-        if (this.doctor === 'Therapist') {
+        if (this.doctor === 'Терапевт') {
             this.selectDoctorHTML = `
             <select class="form-select select-doctor is-invalid" id="doctor" aria-label="Default select example">
             <option >Оберіть лікаря</option>
-            <option  value="Cardiologist">Кардіолог</option>
-            <option value="Dentist">Стоматолог</option>
-            <option selected value="Therapist">Терапевт</option>
+            <option  value="Кардіолог">Кардіолог</option>
+            <option value="Стоматолог">Стоматолог</option>
+            <option selected value="Терапевт">Терапевт</option>
             </select>
             `;
             this.additionalForDoctor = this.therapistHTML;
         };
 
-        if (this.doctor === 'Dentist') {
+        if (this.doctor === 'Стоматолог') {
             this.selectDoctorHTML = `
             <select class="form-select select-doctor is-invalid" id="doctor" aria-label="Default select example">
             <option >Оберіть лікаря</option>
-            <option  value="Cardiologist">Кардіолог</option>
-            <option selected value="Dentist">Стоматолог</option>
-            <option value="Therapist">Терапевт</option>
+            <option  value="Кардіолог">Кардіолог</option>
+            <option selected value="Стоматолог">Стоматолог</option>
+            <option value="Терапевт">Терапевт</option>
             </select>
             `;
             this.additionalForDoctor = this.dentistHTML;
@@ -142,7 +142,7 @@ export default class EditVisit extends Form {
             ${this.selectUrgency}
 
             <div class="mb-3">
-                <label for="fullName" class="col-form-label">Ваше П.І.Б.:</label>
+                <label for="fullName" class="col-form-label">П.І.Б. паціента:</label>
                 <input type="text" class="form-control is-invalid" id="fullName" value="${this.fullName}">
             </div>  
             ${this.additionalForDoctor}     

@@ -40,14 +40,14 @@ export default class Card {
             <p class="card-text">Вік: ${this.age}</p>
              `;
 
-        if (this.doctor === "Cardiologist") {
+        if (this.doctor === "Кардіолог") {
             additionalToCard = addToCardKardiologist
         };
 
-        if (this.doctor === "Dentist") {
+        if (this.doctor === "Стоматолог") {
             additionalToCard = addToCardDantist
         };
-        if (this.doctor === "Therapist") {
+        if (this.doctor === "Терапевт") {
             additionalToCard = addToCardTerapevtist
         };
 
