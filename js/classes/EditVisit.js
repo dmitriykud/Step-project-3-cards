@@ -149,8 +149,6 @@ export default class EditVisit extends Form {
              `;
 
         this.form.insertAdjacentHTML('beforeend', inputsHTML);
-
-
     };
 
     getVizitValues() {
@@ -173,8 +171,8 @@ export default class EditVisit extends Form {
             if (key !== "visitDescription" && body[key] === "" || body[key] === "Оберіть лікаря" || body[key] === "Оберіть терміновість") {
                 alert('Заповніть поля виділені червоним!')
                 return;
-            }
-        }
+            };
+        };
         return body;
     };
 

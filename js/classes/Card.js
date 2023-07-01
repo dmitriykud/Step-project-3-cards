@@ -53,7 +53,7 @@ export default class Card {
 
         const card =
             `<div class="card-body ">
-       <h5 class="card-title">Лікар:${this.doctor}</h5>
+       <h5 class="card-title">Лікар :   ${this.doctor}</h5>
        <p class="card-text">П.І.Б. паціента: ${this.fullName}</p>
            
        </div>
@@ -69,7 +69,6 @@ export default class Card {
         this.container.classList.add('card', 'w-25');
         this.container.setAttribute('id', `${this.id}`);
         this.btnWrapper.style.display = 'flex';
-        // this.btnWrapper.classList.add('bg-warm');
         this.btnWrapper.style.justifyContent ="space-around"
         this.btnWrapper.style.backgroundColor="rgba(187, 122, 177, 0.548)"
         this.divShowMore.classList.add('wrapper-show-more', "card-body", 'active')
