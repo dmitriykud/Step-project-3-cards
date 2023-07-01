@@ -44,7 +44,7 @@ export default class Card {
         };
 
         const card =
-            `<div class="card-body bg-warning">
+            `<div class="card-body ">
        <h5 class="card-title">Лікар:${this.doctor}</h5>
        <p class="card-text">П.І.Б. паціента: ${this.fullName}</p>
            
@@ -60,9 +60,9 @@ export default class Card {
 
         this.container.classList.add('card', 'w-25');
         this.container.setAttribute('id', `${this.id}`);
-        this.divShowMore.classList.add('wrapper-show-more', "card-body", "bg-warning", 'active')
+        this.divShowMore.classList.add('wrapper-show-more', "card-body", 'active')
         this.divShowMore.insertAdjacentHTML('beforeend', divMoreDiscription);
-        this.deleteButton.classList.add('btn', 'btn-primary',);
+        this.deleteButton.classList.add('btn', 'btn-danger',);
         this.deleteButton.innerHTML = 'Видалити';
         this.btnShowMore.classList.add('btn', 'btn-info');
         this.btnShowMore.innerHTML = 'Показати більше';
