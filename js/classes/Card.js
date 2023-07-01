@@ -52,13 +52,14 @@ export default class Card {
         };
 
         const card =
-            `<div class="card-body bg-warning">
-            <h3 class="card-title">Лікар:    ${this.doctor}</h3>
-            <p class="card-text">П.І.Б. паціента: ${this.fullName}</p>           
-            </div>
-             `;
+            `<div class="card-body ">
+       <h5 class="card-title">Лікар:${this.doctor}</h5>
+       <p class="card-text">П.І.Б. паціента: ${this.fullName}</p>
+           
+       </div>
+       `;
 
-        const divMoreDiscription = `
+      const divMoreDiscription = `
             <p class="card-text">Мета візиту: ${this.purposeVisit}</p>
             <p class="card-text">Короткий опис візиту: ${this.visitDescription}</p>
             <p class="card-text">Терміновість: ${this.urgency}</p>       
@@ -71,11 +72,9 @@ export default class Card {
         // this.btnWrapper.classList.add('bg-warm');
         this.btnWrapper.style.justifyContent ="space-around"
         this.btnWrapper.style.backgroundColor="rgba(187, 122, 177, 0.548)"
-
-
-        this.divShowMore.classList.add('wrapper-show-more', "card-body", "bg-warning", 'active')
+        this.divShowMore.classList.add('wrapper-show-more', "card-body", 'active')
         this.divShowMore.insertAdjacentHTML('beforeend', divMoreDiscription);
-        this.deleteButton.classList.add('btn', 'btn-danger');
+        this.deleteButton.classList.add('btn', 'btn-danger',);
         this.deleteButton.innerHTML = 'Видалити';
         this.btnShowMore.classList.add('btn', 'btn-info');
         this.btnShowMore.innerHTML = 'Показати більше';
