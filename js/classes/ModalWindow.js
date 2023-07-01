@@ -42,22 +42,22 @@ export default class ModalWindow {
 
         this.btnClose.addEventListener('click', () => {
             this.close()
-        })
+        });
 
         this.modalConteiner.addEventListener('click', (e) => {
             const withinBoundaries = e.composedPath().includes(this.modalContent);
 
             if (!withinBoundaries) {
                 this.close()
-            }
-        })
+            };
+        });
 
         this.btnConfirm.addEventListener('click', (e) => {
             e.preventDefault();
             this.confirmFunction(() => {
                 this.close();
             });
-        })
+        });
     };
 
     close() {
@@ -67,6 +67,6 @@ export default class ModalWindow {
     render() {
         this.createElement();
         this.addListeners();
-        document.body.append(this.modalConteiner)
-    }
+        document.body.append(this.modalConteiner);
+    };
 };

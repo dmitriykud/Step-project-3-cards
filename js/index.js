@@ -53,7 +53,7 @@ btnCreateVisit.addEventListener('click', () => {
 })
 
 document.querySelector('.btn-serch').addEventListener('click', (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     const inputs = document.querySelector('#search');
     const selectUrgency = document.querySelector('#select_urgency');
@@ -64,7 +64,6 @@ document.querySelector('.btn-serch').addEventListener('click', (event) => {
     inputsData[selectUrgency.id] = selectUrgency.value;
     inputsData[selectDoctor.id] = selectDoctor.value;
 
-    filterCard(inputsData)
-
-})
+    filterCard(inputsData);
+});
 

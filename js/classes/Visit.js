@@ -1,10 +1,21 @@
 import Form from "./Form.js";
 
 export default class Visit extends Form {
-    constructor(title) {
+    constructor(id, age, visitDescription, doctor, purposeVisit, fullName, urgency, indexBodyMass, normalPressure, transferredDiseases, lastDateVisit, title) {
         super(title);
         this.select = document.createElement('select');
         this.additionalInputsContainer = document.createElement('div');
+        this.id = id;
+        this.age = age;
+        this.visitDescription = visitDescription;
+        this.doctor = doctor;
+        this.purposeVisit = purposeVisit;
+        this.fullName = fullName;
+        this.urgency = urgency;
+        this.indexBodyMass = indexBodyMass;
+        this.normalPressure = normalPressure;
+        this.transferredDiseases = transferredDiseases;
+        this.lastDateVisit = lastDateVisit;
 
         this.cardiologistHTML = `
         <div class="mb-3">
@@ -60,13 +71,12 @@ export default class Visit extends Form {
         const inputs = `
             <div class="mb-3">
                 <label for="purposeVisit" class="col-form-label">Мета візиту:</label>
-
                 <input type="text" class="form-control is-invalid" id="purposeVisit">
             </div>
 
             <div class="mb-3">
                 <label for="visitDescription" class="form-label">Короткий опис візиту</label>
-                <textarea class="form-control" id="visitDescription" rows="2" required></textarea>
+                <textarea class="form-control" id="visitDescription" rows="2"></textarea>
             </div>
 
             <select class="form-select select-need is-invalid" id="urgency" aria-label="Default select example">
@@ -123,9 +133,12 @@ export default class Visit extends Form {
         });
 
         for (let key in body) {
+            
             if (key !== "visitDescription" && body[key] === "" || body[key] === "Оберіть лікаря" || body[key] === "Оберіть терміновість") {
                 alert('Заповніть поля виділені червоним!')
                 return;
+            } else {
+
             }
         }
         return body;
